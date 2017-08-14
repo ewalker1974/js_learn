@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Examples set 4 </title>
+        <script type='text/javascript'>
+           var person = {
+               firstName: 'John ',
+               lastName: 'Doe',
+               fullName : function() {
+                   return this.firstName+" "+this.lastName;
+                   
+               }
+           }
+           alert(person.fullName());
+           
+           var person2 = {
+               firstName: 'Hans ',
+               lastName: 'Schmidt',
+               fullName: 'Herr Hans Schmidt'
+                   
+               
+           }
+          
+           
+           //person2.fullName = person.fullName;      
+           //alert(person2.fullName());
+           alert(person.fullName.call(person2,null));
+           alert(person2.fullName);
+           
+            
+        </script> 
+    </head>
+    <body>
+        <div id='place'>...</div>
+    </body>
+</html>

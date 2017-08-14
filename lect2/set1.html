@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Examples set 1 </title>
+        <script type='text/javascript'>
+           function examParam (numData,stringData,arrayData,objData) {
+               numData = 9999;
+               stringData = 'new value';
+               stringData[2]='S';
+               
+               arrayData[2] = 2;
+               objData.field1 = 999;
+               objData.field3 = 9000;
+               
+           }
+           
+           
+           function init () {
+              var placeDiv = document.getElementById('place');
+              
+              var param1 = 1111;
+              var param2 = 'abcdef'
+              var param3 = [1,1,1,1];
+              var param4 = {field1:1,field2:2}
+              param4.toString = function() {
+                  var strVal = '';
+                  for (var field in this) {
+                      if (typeof this[field]!='function')
+                      strVal+=`${field}: ${this[field]} `;
+                  }
+                  return strVal;
+              }
+
+           
+              placeDiv.innerHTML = "Init data<pre>\n"
+                +param1+"\n"
+                +param2+"\n"
+                +param3+"\n"
+                +param4+"\n\n"
+                +"</pre>";
+                
+                examParam(param1, param2, param3, param4);
+
+              placeDiv.innerHTML = placeDiv.innerHTML+ "After call<pre>\n"
+                +param1+"\n"
+                +param2+"\n"             
+                +param3+"\n"
+                +param4+"\n\n"
+                +"</pre>";    
+            }
+           
+
+              
+            window.addEventListener('load',init,false);
+            
+        </script> 
+    </head>
+    <body>
+        <div id='place'>...</div>
+    </body>
+</html>

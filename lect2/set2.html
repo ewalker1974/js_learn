@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Examples set 1 </title>
+        <script type='text/javascript'>
+           function fibonacci (index) {
+               var val;
+               if (index == 0) {
+                   val = 0;
+               } else if (index == 1) {
+                   val = 1;
+               } else {
+                  val = fibonacci(index-1)+fibonacci(index-2);    
+               }
+               return val;
+               
+           }
+           
+           
+           function init () {
+              var placeDiv = document.getElementById('place');
+              
+              var param1 = 1;
+              var param2 = 5
+              var param3 = 10;
+
+           
+              placeDiv.innerHTML = "Fibonacci<pre>\n"
+                +param1+" "+fibonacci(param1)+"\n"
+                +param2+" "+fibonacci(param2)+"\n"
+                +param3+" "+fibonacci(param3)+"\n"
+                +"</pre>";
+                
+                
+
+              placeDiv.innerHTML = placeDiv.innerHTML+ "After call<pre>\n"
+                +param1.toString()+"\n"
+                +param2.toString()+"\n"             
+                +param3.toString()+"\n"
+                +param4.toString()+"\n\n"
+                +"</pre>";    
+            }
+           
+
+              
+            window.addEventListener('load',init,false);
+            
+        </script> 
+    </head>
+    <body>
+        <div id='place'>...</div>
+    </body>
+</html>

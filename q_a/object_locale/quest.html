@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Difference of toString and toLocale</title>
+        <script type='text/javascript'>
+            function init() {
+              var test = {x:"test_x",y:"test_y"};
+              var test2 = [1,2,3,4,5,7000];
+              var test3 = new Date();
+
+              var placeDiv = document.getElementById('place');
+
+              placeDiv.innerHTML = "Conventional data<pre>\n"
+                +test.toString()+"\n"
+                +test2.toString()+"\n"             
+                +test3.toString()+"\n\n"
+                +"</pre>";
+
+              placeDiv.innerHTML = placeDiv.innerHTML+ "Locale data<pre>\n"
+                +test.toLocaleString()+"\n"
+                +test2.toLocaleString()+"\n"             
+                +test3.toLocaleString()+"\n"
+                +"</pre>";    
+            }
+            window.addEventListener('load',init,false);
+            
+        </script> 
+    </head>
+    <body>
+        <div id='place'>...</div>
+    </body>
+</html>
